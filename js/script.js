@@ -1,21 +1,4 @@
 let pokemonList = [
-    {
-    name: 'Bulbasaur', 
-    height: 11, 
-    type: ['grass', ' poison']
-    },
-    {
-    name: 'Pikachu',
-    height: 4, 
-    type: 'electric'
-    },
-    {
-    name: 'Charmander',
-    height: 6, 
-    type: 'fire'
-    },
-];
-
 for (let i = 0; i < pokemonList.length; i++) {
     document.write(`${pokemonList[i].name} <br> (height: ${pokemonList[i].height}) <br> (type: ${pokemonList[i].type})`);
     if (pokemonList[i].height > 10) {
