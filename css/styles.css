@@ -5,3 +5,8 @@ body {
     font-size: 18px;
 }
 
+.page-header {
+    border-bottom: 2px solid #000000;
+    color: #000000;
+    margin-bottom: 20px;
+}
