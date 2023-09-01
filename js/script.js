@@ -34,10 +34,14 @@ let pokemonRepository = (function() {
         unorderedListItem.appendChild(button);
         unorderedList.appendChild(unorderedListItem);
     };
+
+
     return {
         getAll : getAll,
         add : add,
+        addListItem : addListItem,
     };
+
 })();
 
 let pokemon = {name: 'Charizard', height: 25, type: 'fire'};
