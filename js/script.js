@@ -1,18 +1,18 @@
 let pokemonList = [
     {
-    name: 'Bulbasaur', 
-    height: 11, 
-    type: ['grass', ' poison']
+        name: 'Bulbasaur', 
+        height: 11, 
+        type: ['grass', ' poison']
     },
     {
-    name: 'Pikachu',
-    height: 4, 
-    type: 'electric'
+        name: 'Pikachu',
+        height: 4, 
+        type: 'electric'
     },
     {
-    name: 'Charmander',
-    height: 6, 
-    type: 'fire'
+        name: 'Charmander',
+        height: 6, 
+        type: 'fire'
     },
 ];
 
@@ -25,4 +25,4 @@ for (let i = 0; i < pokemonList.length; i++) {
     }else {
         document.write('<p>' + "This is a small Pokemon!" + "</p>");
     }
-}
+}    
