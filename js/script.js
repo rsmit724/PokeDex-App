@@ -30,6 +30,9 @@ let pokemonRepository = (function() {
         add : add,
     };
 })();
+
+let pokemon = {name: 'Charizard', height: 25, type: 'fire'};
+
     
 pokemonList.forEach(function(listItem) {
     document.write(`${listItem.name} <br> (height: ${listItem.height}) <br> (type: ${listItem.type}) <br>`);
