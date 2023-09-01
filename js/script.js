@@ -15,17 +15,17 @@ let pokemonList = [
         type: 'fire'
     },
 ];
-
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write(`${pokemonList[i].name} <br> (height: ${pokemonList[i].height}) <br> (type: ${pokemonList[i].type})`);
-    if (pokemonList[i].height > 10) {
-        document.write('<p>' + "This is a large Pokemon!" + "</p>");
-    }else if (pokemonList[i].height < 10 && pokemonList[i].height > 5){
-        document.write('<p>' + "This is an average Pokemon!" + "</p>");
-    }else {
-        document.write('<p>' + "This is a small Pokemon!" + "</p>");
-    }
-}    
+    
+pokemonList.forEach(function(listItem) {
+    document.write(`${listItem.name} <br> (height: ${listItem.height}) <br> (type: ${listItem.type}) <br>`);
+        if (listItem.height > 10) {
+                document.write('<p>' + "This is a large Pokemon!" + "</p>");
+            }else if (listItem.height < 10 && listItem.height > 5){
+                document.write('<p>' + "This is an average Pokemon!" + "</p>");
+        }else {
+            document.write('<p>' + "This is a small Pokemon!" + "</p>");
+        }
+});
 // for (let i = 0; i < pokemonList.length; i++) {
 //     document.write(`${pokemonList[i].name} <br> (height: ${pokemonList[i].height}) <br> (type: ${pokemonList[i].type})`);
 //     if (pokemonList[i].height > 10) {
