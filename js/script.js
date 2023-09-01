@@ -25,6 +25,15 @@ let pokemonRepository = (function() {
         return pokemonList.push(pokemon)
     }
 
+    function addListItem(pokemon) {
+        let unorderedList = document.querySelector('.pokemon-list');
+        let unorderedListItem = document.createElement('li');
+        let button = document.createElement('button');
+            button.innerText = pokemon.name;
+            button.classList.add('pokemon-button');
+        unorderedListItem.appendChild(button);
+        unorderedList.appendChild(unorderedListItem);
+    };
     return {
         getAll : getAll,
         add : add,
