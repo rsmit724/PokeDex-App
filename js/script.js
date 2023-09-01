@@ -36,7 +36,7 @@ let pokemon = {name: 'Charizard', height: 25, type: 'fire'};
 pokemonRepository.getAll();
 pokemonRepository.add(pokemon);
     
-pokemonList.forEach(function(listItem) {
+pokemonRepository.getAll().forEach(function(listItem) {
     document.write(`${listItem.name} <br> (height: ${listItem.height}) <br> (type: ${listItem.type}) <br>`);
         if (listItem.height > 10) {
                 document.write('<p>' + "This is a large Pokemon!" + "</p>");
