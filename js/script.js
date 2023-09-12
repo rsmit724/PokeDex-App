@@ -10,8 +10,6 @@ let pokemonRepository = (function() {
         return pokemonList.push(pokemon)
     }
 
-    function showDetails(pokemon) {
-        console.log(pokemon.name)
     }
 
     function addListItem(pokemon) {
@@ -28,6 +26,11 @@ let pokemonRepository = (function() {
         })
     };
 
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+          console.log(pokemon);
+        });
+      }
 
     return {
         getAll : getAll,
