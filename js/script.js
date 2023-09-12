@@ -78,6 +78,6 @@ let pokemonRepository = (function() {
     };
 })();
 
-pokemonRepository.getAll();
 });
 
+pokemonRepository.getAll();
