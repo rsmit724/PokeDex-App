@@ -7,9 +7,14 @@ let pokemonRepository = (function() {
     }
 
     function add(pokemon) {
-        return pokemonList.push(pokemon)
-    }
-
+        if (
+            typeof pokemon === 'object' &&
+            'name' in pokemon
+        ) {
+            return pokemonList.push(pokemon);
+        }  else {
+            console.log('not a valid pokemon');
+        }
     }
 
     function addListItem(pokemon) {
