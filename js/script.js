@@ -111,10 +111,27 @@ let pokemonRepository = (function() {
         modalContainer.classList.add ('is-visible');
 
         //close the modal by clicking outside of it
+        modalContainer.addEventListener('click', (e) => {
+          let target = e.target;
+          if (target === modalContainer) {
+            hideModal();
+          }
         });
+
       }
 
+      
+
       //open and close modal using keyboard
+      window.addEventListener('keydown', (e) => {
+        let modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+          hideModal();
+        }
+      });
+    
+    
+
     return {
         getAll : getAll,
         add : add,
