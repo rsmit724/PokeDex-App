@@ -20,7 +20,6 @@ let pokemonRepository = (function() {
             console.log('not a valid pokemon');
         }
     }
-
     //add pokemon to the UL in the index body, with each list item being displayed as a button
     function addListItem(pokemon) {
         let unorderedList = document.querySelector('.pokemon-list');
@@ -150,4 +149,16 @@ pokemonRepository.loadList().then(function() {
     });
 });
 
-pokemonRepository.getAll();
+let dialogPromiseReject;
+
+function hideModal () {
+  let modalContainer = document.querySelector ('#modal-container');
+  modalContainer.classList.remove('is-visible');
+
+  if (dialogPromiseReject) {
+    dialogPromiseReject();
+    dialogPromiseReject = null;
+  }
+}
+
+
