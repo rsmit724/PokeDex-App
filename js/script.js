@@ -30,10 +30,9 @@ let pokemonRepository = (function() {
             button.classList.add('pokemon-button');
         unorderedListItem.appendChild(button);
         unorderedList.appendChild(unorderedListItem);
-
-        button.addEventListener('click', function(event) {
-            showDetails(pokemon);
         //calls the showDetails function when a button in the UL is clicked
+        button.addEventListener ('click', () => {
+          showDetails(pokemon);
         })
     };
 
@@ -66,14 +65,51 @@ let pokemonRepository = (function() {
         item.height = details.height;
         //modify this later on to include pokemon types in the modal
         item.types = details.types;
+        showModal(item);
       }).catch(function (e) {
         console.error(e);
       });
     }
 
     function showDetails(pokemon) {
-        loadDetails(pokemon).then(function () {
-          console.log(pokemon);
+      loadDetails(pokemon);
+      }
+
+      function showModal (pokemon) {
+        let modalContainer = document.querySelector ('#modal-container');
+
+        //fills modal with content
+        modalContainer.innerHTML = '';
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = pokemon.name;
+
+        let imageElement = document.createElement('img');
+        imageElement.classList.add('modal-img');
+        imageElement.src = pokemon.imageUrl
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = 'HEIGHT:  ' + pokemon.height;
+
+        let typesElement = document.createElement('p');
+        typesElement.innerText = 'TYPES: ' + pokemon.types;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(imageElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modal.appendChild(typesElement); //adds types as objects currently, fix this later
+        modalContainer.appendChild(modal);
+
+        modalContainer.classList.add ('is-visible');
+
         //close the modal by clicking outside of it
         });
       }
